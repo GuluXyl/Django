@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提问页面</title>
+</head>
+<script>
+    {% if msg == 'yes' %}
+        alert('必须填写问题')
+    {% endif %}
+</script>
+<body>
+    <div>我要提问</div>
+    <a href="/index/">返回首页</a><br>
+    <form action="/questions/" method="POST">
+        问题:<input type="text" name="question_one"><br>
+        问题描述:<input type="text" name="question_two">
+        <input type="submit" value="保存问题">
+    </form>
+
+</body>
+</html>

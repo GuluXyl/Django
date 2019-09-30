@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>回答页面</title>
+</head>
+<script>
+    {% if al == 'yes' %}
+        alert('必须填写你的答案')
+    {% endif %}
+</script>
+<body>
+    <p>问题:{{ answer_one.title }}</p>
+    <p>问题描述:{{ answer_one.answerCount }}</p>
+        网友回答:{% for answer in answer_all %}
+            {{ answer.ansDate }}<br>
+            {{ answer.ansContent }}
+        {% endfor %}
+    <form action="/answer/{{ id }}" method="post">
+        我来回答: <textarea name="answer_num" id="" cols="30" rows="5"></textarea>
+        <input type="submit" value="提交答案">
+    </form>
+</body>
+</html>

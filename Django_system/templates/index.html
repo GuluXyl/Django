@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>首页</title>
+</head>
+<body>
+<div>在线问答</div>
+<div><a href="/questions/">我要提问</a></div>
+<div>
+    <table>
+         <thead>
+            <tr>
+                 <th>序号</th>
+                <th>问题</th>
+                <th>回答次数</th>
+                <th>最后修改</th>
+            </tr>
+         </thead>
+        <tbody>
+            {% for list_ofter in text_all %}
+                <tr>
+                    <td>{{ list_ofter.id }}</td>
+                    <td><a href="/answer/{{ list_ofter.id }}">{{ list_ofter.title }}</a></td>
+                    <td>{{ list_ofter.answerCount }}</td>
+                    <td>{{ list_ofter.lastModifiled }}</td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+   </div>
+</body>
+</html>
